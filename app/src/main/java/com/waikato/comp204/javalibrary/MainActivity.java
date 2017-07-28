@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("Hello", "onCreate");
-        //doc = new Doc( null, "java");
+        //doc = new Doc( null, "java");asd
         //doc = load();
         //if (true) { //doc == null) {
         Log.d("LOAD", "Load null");
@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
     public Doc load() {
         try {
-            String filePath = getApplicationContext().getFilesDir().getPath().toString() + "/Docs.txt";
+            String filePath = getApplicationContext().getFilesDir().getPath() + "/Docs.txt";
             File f = new File(filePath);
-            FileInputStream fis = new FileInputStream(new File(f.getAbsolutePath().toString()));
+            FileInputStream fis = new FileInputStream(new File(f.getAbsolutePath()));
             ObjectInputStream is = new ObjectInputStream(fis);
             Doc doc = (Doc) is.readObject();
             is.close();
@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void save(Doc doc) {
         try {
-            String filePath = getApplicationContext().getFilesDir().getPath().toString() + "/Docs.txt";
+            String filePath = getApplicationContext().getFilesDir().getPath() + "/Docs.txt";
             File f = new File(filePath);
-            FileOutputStream fos = new FileOutputStream(new File(f.getAbsolutePath().toString()), true);
+            FileOutputStream fos = new FileOutputStream(new File(f.getAbsolutePath()), true);
             ObjectOutputStream os = new ObjectOutputStream(fos);
             os.writeObject(doc);
             os.close();
