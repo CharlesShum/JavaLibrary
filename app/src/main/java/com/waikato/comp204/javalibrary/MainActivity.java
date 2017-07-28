@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         save(doc);
-        Log.d("Hello", "onPause");
+        Log.d("Hello", "onPauseasd");
     }
 
     @Override
